@@ -871,7 +871,7 @@ LittlerootTown_Movement_MomExitThroughDoor:
 	walk_up
 	step_end
 
-LittlerootTown_EventScript_Mom::
+LittlerootTown_EventScript_Mom2::
 	lock
 	faceplayer
 	checkplayergender
@@ -890,12 +890,44 @@ LittlerootTown_EventScript_Mom::
 	goto LittlerootTown_EventScript_SetReceivedRunningShoes
 	end
 
+LittlerootTown_EventScript_Mom::
+	lock
+	faceplayer
+	checkplayergender
+	call_if_eq VAR_RESULT, MALE, LittlerootTown_EventScript_SetHomeDoorCoordsMale
+	call_if_eq VAR_RESULT, FEMALE, LittlerootTown_EventScript_SetHomeDoorCoordsFemale
+	call LittlerootTown_EventScript_GiveExpShare
+	applymovement LOCALID_MOM, Common_Movement_WalkInPlaceFasterUp
+	waitmovement 0
+	opendoor VAR_0x8009, VAR_0x800A
+	waitdooranim
+	applymovement LOCALID_MOM, LittlerootTown_Movement_MomExitThroughDoor
+	waitmovement 0
+	hideobjectat LOCALID_MOM, MAP_LITTLEROOT_TOWN
+	closedoor VAR_0x8009, VAR_0x800A
+	waitdooranim
+	removeobject LOCALID_MOM
+	setvar VAR_LITTLEROOT_TOWN_STATE, 4
+	release
+	end
+
+
 LittlerootTown_EventScript_SetReceivedRunningShoes::
 	removeobject LOCALID_MOM
 	setflag FLAG_SYS_B_DASH
 	setvar VAR_LITTLEROOT_TOWN_STATE, 4
 	release
 	end
+
+LittlerootTown_EventScript_GiveExpShare::
+	msgbox LittlerootTown_Text_DadsOldItem, MSGBOX_DEFAULT
+	giveitem ITEM_EXP_SHARE
+	msgbox LittlerootTown_Text_ExplainExpShare, MSGBOX_DEFAULT
+	msgbox LittlerootTown_Text_ComeHomeIfAnythingHappens, MSGBOX_DEFAULT
+	setflag FLAG_RECEIVED_RUNNING_SHOES
+	closemessage
+	delay 30
+	return
 
 LittlerootTown_EventScript_GiveRunningShoes::
 	msgbox LittlerootTown_Text_WearTheseRunningShoes, MSGBOX_DEFAULT
@@ -908,6 +940,24 @@ LittlerootTown_EventScript_GiveRunningShoes::
 	closemessage
 	delay 30
 	return
+
+LittlerootTown_Text_DadsOldItem:
+	.string "MOM: {PLAYER}! {PLAYER}! Did you\n"
+	.string "introduce yourself to PROF. BIRCH?\p"
+	.string "Oh! What an adorable POKéMON!\n"
+	.string "You got it from PROF. BIRCH. How nice!\p"
+	.string "You're your father's child, all right.\n"
+	.string "You look good together with POKéMON!\p"
+	.string "Here, honey! If you're going out on an\n"
+	.string "adventure, take this!$"
+
+LittlerootTown_Text_ExplainExpShare:
+	.string "MOM: {PLAYER}, it used to belong to \n"
+	.string "your DAD. He never uses it anymore.\p"
+	.string "They are used to train your POKéMON \n"
+	.string "faster! A portion of the experience \l"
+	.string "will be shared between all POKéMON \l"
+	.string "in your party.$"
 
 LittlerootTown_Text_OurNewHomeLetsGoInside:
 	.string "MOM: {PLAYER}, we're here, honey!\p"

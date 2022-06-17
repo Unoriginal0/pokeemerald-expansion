@@ -328,7 +328,14 @@ PlayersHouse_1F_Text_GoIntroduceYourselfNextDoor:
 	.string "One of DAD's friends lives in town.\p"
 	.string "PROF. BIRCH is his name.\p"
 	.string "He lives right next door, so you should\n"
-	.string "go over and introduce yourself.$"
+	.string "go over and introduce yourself.\p$"
+	.string "Don't forget your RUNNING SHOES!$"
+
+PlayersHouse_1F_Text_RunningShoes:
+	.string "MOM: {PLAYER}, those shoes came with\n"
+	.string "instructions.\p"
+	.string "“Press the B Button while wearing these\n"
+	.string "RUNNING SHOES to run extra-fast!$"
 
 PlayersHouse_1F_Text_SeeYouHoney:
 	.string "MOM: See you, honey!$"

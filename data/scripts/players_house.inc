@@ -167,6 +167,9 @@ PlayersHouse_1F_EventScript_PetalburgGymReportMale::
 	waitmovement 0
 	msgbox PlayersHouse_1F_Text_ItsOverWeMissedHim, MSGBOX_DEFAULT
 	msgbox PlayersHouse_1F_Text_GoIntroduceYourselfNextDoor, MSGBOX_DEFAULT
+	setflag FLAG_SYS_B_DASH
+	playfanfare MUS_OBTAIN_ITEM
+	msgbox PlayersHouse_1F_Text_RunningShoes, MSGBOX_DEFAULT
 	closemessage
 	setvar VAR_TEMP_1, 1
 	applymovement VAR_0x8005, PlayersHouse_1F_Movement_MomReturnToSeatMale
@@ -192,6 +195,9 @@ PlayersHouse_1F_EventScript_PetalburgGymReportFemale::
 	waitmovement 0
 	msgbox PlayersHouse_1F_Text_ItsOverWeMissedHim, MSGBOX_DEFAULT
 	msgbox PlayersHouse_1F_Text_GoIntroduceYourselfNextDoor, MSGBOX_DEFAULT
+	setflag FLAG_SYS_B_DASH
+	playfanfare MUS_OBTAIN_ITEM
+	msgbox PlayersHouse_1F_Text_RunningShoes, MSGBOX_DEFAULT
 	closemessage
 	setvar VAR_TEMP_1, 1
 	applymovement VAR_0x8005, PlayersHouse_1F_Movement_MomReturnToSeatFemale

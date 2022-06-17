@@ -6738,6 +6738,12 @@ static u32 GetTrainerMoneyToGive(u16 trainerId)
             moneyReward = 4 * lastMonLevel * gBattleStruct->moneyMultiplier * gTrainerMoneyTable[i].value;
     }
 
+    // CUSTOM: Give more money if playing on set mode.
+    if (gSaveBlock2Ptr->optionsBattleStyle == OPTIONS_BATTLE_STYLE_SET)
+    {
+        moneyReward = moneyReward * 150 / 100;
+    }
+
     return moneyReward;
 }
 
