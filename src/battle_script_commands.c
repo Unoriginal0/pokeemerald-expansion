@@ -3910,7 +3910,7 @@ static void Cmd_getexp(void)
                 }
             #else
                 *exp = calculatedExp;
-                gExpShareExp = calculatedExp / 2;
+                gExpShareExp = calculatedExp / 2; // Change this to controll exp given by Gen 6 Exp. Share
                 if (gExpShareExp == 0)
                     gExpShareExp = 1;
             #endif
