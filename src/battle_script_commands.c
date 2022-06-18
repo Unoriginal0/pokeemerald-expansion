@@ -3881,7 +3881,7 @@ static void Cmd_getexp(void)
                 else
                     holdEffect = ItemId_GetHoldEffect(item);
 
-                if (holdEffect == HOLD_EFFECT_EXP_SHARE)
+                if (holdEffect == HOLD_EFFECT_EXP_SHARE && !FlagGet(FLAG_SYS_EXP_SHARE))
                     viaExpShare++;
             }
             #if (B_SCALED_EXP >= GEN_5) && (B_SCALED_EXP != GEN_6)
@@ -3930,7 +3930,7 @@ static void Cmd_getexp(void)
             else
                 holdEffect = ItemId_GetHoldEffect(item);
 
-            if (holdEffect != HOLD_EFFECT_EXP_SHARE && !(gBattleStruct->sentInPokes & 1))
+            if (!FlagGet(FLAG_SYS_EXP_SHARE) && holdEffect != HOLD_EFFECT_EXP_SHARE && !(gBattleStruct->sentInPokes & 1))
             {
                 *(&gBattleStruct->sentInPokes) >>= 1;
                 gBattleScripting.getexpState = 5;
@@ -3968,11 +3968,12 @@ static void Cmd_getexp(void)
                         gBattleMoveDamage = 0;
 
                     // only give exp share bonus in later gens if the mon wasn't sent out
-                    if ((holdEffect == HOLD_EFFECT_EXP_SHARE) && ((gBattleMoveDamage == 0) || (B_SPLIT_EXP < GEN_6)))
+                    if ((holdEffect == HOLD_EFFECT_EXP_SHARE || FlagGet(FLAG_SYS_EXP_SHARE)) && ((gBattleMoveDamage == 0) || (B_SPLIT_EXP < GEN_6)))
                         gBattleMoveDamage += gExpShareExp;
                     if (holdEffect == HOLD_EFFECT_LUCKY_EGG)
                         gBattleMoveDamage = (gBattleMoveDamage * 150) / 100;
-                    if (gBattleTypeFlags & BATTLE_TYPE_TRAINER && B_TRAINER_EXP_MULTIPLIER <= GEN_7)
+                    //I want trainers to give 1.5x if Exp. Share is off.
+                    if (gBattleTypeFlags & BATTLE_TYPE_TRAINER && (B_TRAINER_EXP_MULTIPLIER < GEN_7 || (B_TRAINER_EXP_MULTIPLIER >= GEN_7 && !FlagGet(FLAG_SYS_EXP_SHARE))))
                         gBattleMoveDamage = (gBattleMoveDamage * 150) / 100;
                     #if (B_SCALED_EXP >= GEN_5) && (B_SCALED_EXP != GEN_6)
                     {
