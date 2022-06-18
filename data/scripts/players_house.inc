@@ -169,8 +169,6 @@ PlayersHouse_1F_EventScript_PetalburgGymReportMale::
 	msgbox PlayersHouse_1F_Text_GoIntroduceYourselfNextDoor, MSGBOX_DEFAULT
 	setflag FLAG_SYS_B_DASH
 	playfanfare MUS_OBTAIN_ITEM
-	msgbox PlayersHouse_1F_Text_SwitchShoesWithRunningShoes, MSGBOX_DEFAULT
-	waitfanfare
 	msgbox PlayersHouse_1F_Text_RunningShoes, MSGBOX_DEFAULT
 	closemessage
 	setvar VAR_TEMP_1, 1
@@ -199,8 +197,6 @@ PlayersHouse_1F_EventScript_PetalburgGymReportFemale::
 	msgbox PlayersHouse_1F_Text_GoIntroduceYourselfNextDoor, MSGBOX_DEFAULT
 	setflag FLAG_SYS_B_DASH
 	playfanfare MUS_OBTAIN_ITEM
-	msgbox PlayersHouse_1F_Text_SwitchShoesWithRunningShoes, MSGBOX_DEFAULT
-	waitfanfare
 	msgbox PlayersHouse_1F_Text_RunningShoes, MSGBOX_DEFAULT
 	closemessage
 	setvar VAR_TEMP_1, 1
