@@ -402,8 +402,12 @@ static void WaitForVBlank(void)
 {
     gMain.intrCheck &= ~INTR_FLAG_VBLANK;
 
+    #ifdef BUGFIX
+    asm("swi 0x5"); // Gamefreak do be kinda dumb
+    #else
     while (!(gMain.intrCheck & INTR_FLAG_VBLANK))
         ;
+    #endif
 }
 
 void SetTrainerHillVBlankCounter(u32 *counter)

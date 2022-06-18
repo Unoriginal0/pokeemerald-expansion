@@ -8374,7 +8374,11 @@ static void DoGroundEffects_OnSpawn(struct ObjectEvent *objEvent, struct Sprite 
 {
     u32 flags;
 
+    #ifdef BUGFIX
+    if (objEvent->triggerGroundEffectsOnMove && !objEvent->invisible)
+    #else
     if (objEvent->triggerGroundEffectsOnMove)
+    #endif
     {
         flags = 0;
         UpdateObjectEventElevationAndPriority(objEvent, sprite);
@@ -8390,7 +8394,11 @@ static void DoGroundEffects_OnBeginStep(struct ObjectEvent *objEvent, struct Spr
 {
     u32 flags;
 
+    #ifdef BUGFIX
+    if (objEvent->triggerGroundEffectsOnMove && !objEvent->invisible)
+    #else
     if (objEvent->triggerGroundEffectsOnMove)
+    #endif
     {
         flags = 0;
         UpdateObjectEventElevationAndPriority(objEvent, sprite);
@@ -8406,8 +8414,12 @@ static void DoGroundEffects_OnBeginStep(struct ObjectEvent *objEvent, struct Spr
 static void DoGroundEffects_OnFinishStep(struct ObjectEvent *objEvent, struct Sprite *sprite)
 {
     u32 flags;
-
+    
+    #ifdef BUGFIX
+    if (objEvent->triggerGroundEffectsOnStop && !objEvent->invisible)
+    #else
     if (objEvent->triggerGroundEffectsOnStop)
+    #endif
     {
         flags = 0;
         UpdateObjectEventElevationAndPriority(objEvent, sprite);

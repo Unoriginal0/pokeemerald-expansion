@@ -772,7 +772,12 @@ void Snow_InitVars(void)
     gWeatherPtr->weatherGfxLoaded = FALSE;
     gWeatherPtr->gammaTargetIndex = 3;
     gWeatherPtr->gammaStepDelay = 20;
-    gWeatherPtr->targetSnowflakeSpriteCount = 16;
+    //More snow, flavour and not a bugfix
+    #ifdef BUGFIX
+        gWeatherPtr->targetSnowflakeSpriteCount = 32;
+    #else
+        gWeatherPtr->targetSnowflakeSpriteCount = 16;
+    #endif
     gWeatherPtr->snowflakeVisibleCounter = 0;
 }
 
@@ -943,7 +948,11 @@ static void InitSnowflakeSpriteMovement(struct Sprite *sprite)
 static void WaitSnowflakeSprite(struct Sprite *sprite)
 {
     // Timer is never incremented
-    if (gWeatherPtr->snowflakeTimer > 18)
+    #ifdef BUGFIX
+        if (++gWeatherPtr->snowflakeTimer > 18) // Bugfix to increment
+    #else
+        if (gWeatherPtr->snowflakeTimer > 18)
+    #endif
     {
         sprite->invisible = FALSE;
         sprite->callback = UpdateSnowflakeSprite;

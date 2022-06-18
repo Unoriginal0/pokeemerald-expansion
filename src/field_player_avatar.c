@@ -330,6 +330,48 @@ static u8 ObjectEventCB2_NoMovement2(void)
     return 0;
 }
 
+#ifdef BUGFIX
+// Better reflections
+static void TryHidePlayerReflection(void)
+{
+    if (gObjectEvents[gPlayerAvatar.objectEventId].hasReflection) {
+        s16 x, y;
+        struct ObjectEvent *playerObjEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
+        x = playerObjEvent->currentCoords.x;
+        y = playerObjEvent->currentCoords.y;
+        MoveCoords(DIR_SOUTH, &x, &y);
+        if (!MetatileBehavior_IsReflective(MapGridGetMetatileBehaviorAt(x, y)))
+            playerObjEvent->hideReflection = TRUE;
+        else 
+            playerObjEvent->hideReflection = FALSE;
+    }
+}
+
+void PlayerStep(u8 direction, u16 newKeys, u16 heldKeys)
+{
+    struct ObjectEvent *playerObjEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
+
+    HideShowWarpArrow(playerObjEvent);
+    if (gPlayerAvatar.preventStep == FALSE)
+    {
+        TryHidePlayerReflection();
+        Bike_TryAcroBikeHistoryUpdate(newKeys, heldKeys);
+        if (TryInterruptObjectEventSpecialAnim(playerObjEvent, direction) == 0)
+        {
+            npc_clear_strange_bits(playerObjEvent);
+            DoPlayerAvatarTransition();
+            if (TryDoMetatileBehaviorForcedMovement() == 0)
+            {
+                MovePlayerAvatarUsingKeypadInput(direction, newKeys, heldKeys);
+                PlayerAllowForcedMovementIfMovingSameDirection();
+            }
+
+            TryHidePlayerReflection();
+        }
+    }
+}
+#else
+
 void PlayerStep(u8 direction, u16 newKeys, u16 heldKeys)
 {
     struct ObjectEvent *playerObjEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
@@ -350,6 +392,7 @@ void PlayerStep(u8 direction, u16 newKeys, u16 heldKeys)
         }
     }
 }
+#endif
 
 static bool8 TryInterruptObjectEventSpecialAnim(struct ObjectEvent *playerObjEvent, u8 direction)
 {
@@ -1700,6 +1743,9 @@ static void Task_WaitStopSurfing(u8 taskId)
         gPlayerAvatar.preventStep = FALSE;
         ScriptContext2_Disable();
         DestroySprite(&gSprites[playerObjEvent->fieldEffectSpriteId]);
+        #ifdef BUGFIX
+            playerObjEvent->triggerGroundEffectsOnMove = TRUE; // Adds ground effect after surfing, such as rustling grass
+        #endif
         DestroyTask(taskId);
     }
 }
