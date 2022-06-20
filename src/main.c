@@ -24,6 +24,9 @@
 #include "main.h"
 #include "trainer_hill.h"
 #include "constants/rgb.h"
+#ifdef MGBA_DEBUG
+#include "mgba_printf/mgba.h"
+#endif
 
 static void VBlankIntr(void);
 static void HBlankIntr(void);
@@ -109,6 +112,9 @@ void AgbMain()
     ClearDma3Requests();
     ResetBgs();
     SetDefaultFontsPointer();
+#ifdef MGBA_DEBUG
+    MgbaOpen(); // Debugging starter
+#endif
     InitHeap(gHeap, HEAP_SIZE);
 
     gSoftResetDisabled = FALSE;

@@ -4279,7 +4279,7 @@ case n:                                                                 \
 
 static union PokemonSubstruct *GetSubstruct(struct BoxPokemon *boxMon, u8 substructType)
 {
-    union PokemonSubstruct *substruct = boxMon->secure.substructs;
+    union PokemonSubstruct *substructs = boxMon->secure.substructs;
     return &substructs[substructType];
 }
 

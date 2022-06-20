@@ -509,6 +509,7 @@ struct BattleStruct
     u32 expValue;
     u8 field_52;
     u8 sentInPokes;
+    u8 BackupSentIn;
     bool8 selectionScriptFinished[MAX_BATTLERS_COUNT];
     u8 battlerPartyIndexes[MAX_BATTLERS_COUNT];
     u8 monToSwitchIntoId[MAX_BATTLERS_COUNT];
