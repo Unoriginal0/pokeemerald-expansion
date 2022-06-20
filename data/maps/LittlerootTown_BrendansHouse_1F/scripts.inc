@@ -295,7 +295,7 @@ PlayersHouse_1F_Text_RunningShoes: @ 81E894F
 	.string "Mom: {PLAYER}, those shoes came with\n"
 	.string "instructions.\p"
 	.string "“Press the B Button while wearing these\n"
-	.string "Running Shoes to run extra-fast!\p$"
+	.string "Running Shoes to run extra-fast!$"
 
 PlayersHouse_1F_Text_IsntItNiceInHere: @ 81F7A1C
 	.string "Mom: See, {PLAYER}?\n"

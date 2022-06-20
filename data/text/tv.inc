@@ -1045,7 +1045,7 @@ SmartShopper_Text_ClerkNormal::
 	.string "Why, just the other day a Trainer\n"
 	.string "named {STR_VAR_1} bought {STR_VAR_3}.$"
 
-gTVTodaysSmartShopperText02:: @ 08283C81
+SmartShopper_Text_RandomComment1::
 	.string "Interviewer: The Trainer bought\n"
 	.string "{STR_VAR_3} {STR_VAR_2}S? That's a haul!\p"
 	.string "If I may say so, {STR_VAR_1} must have\n"
@@ -1054,13 +1054,13 @@ gTVTodaysSmartShopperText02:: @ 08283C81
 	.string "For traveling, {STR_VAR_2}S are so\n"
 	.string "important!$"
 
-gTVTodaysSmartShopperText03:: @ 08283D32
+SmartShopper_Text_RandomComment2::
 	.string "Interviewer: Speaking of the item\n"
 	.string "{STR_VAR_2}, I just bought {STR_VAR_3} of\l"
 	.string "them recently.\p"
 	.string "After all, {STR_VAR_2}'s a great item!$"
 
-gTVTodaysSmartShopperText04:: @ 08283D99
+SmartShopper_Text_RandomComment3::
 	.string "Interviewer: {STR_VAR_2}?!\n"
 	.string "But {STR_VAR_3} of them?!\p"
 	.string "I didn't think there would be anyone\n"
@@ -1068,7 +1068,7 @@ gTVTodaysSmartShopperText04:: @ 08283D99
 	.string "My goodness, I can only afford one or\n"
 	.string "two at a time…$"
 
-gTVTodaysSmartShopperText05:: @ 08283E28
+SmartShopper_Text_RandomComment4::
 	.string "Interviewer: One time, I bought\n"
 	.string "a whole lot of the item {STR_VAR_2}.\p"
 	.string "But it turned out to be too many.\n"
@@ -1078,21 +1078,21 @@ gTVTodaysSmartShopperText05:: @ 08283E28
 	.string "Oops!\p"
 	.string "There's no point talking about me!$"
 
-gTVTodaysSmartShopperText06:: @ 08283F01
+SmartShopper_Text_SecondItem::
 	.string "Clerk: {STR_VAR_1} also bought the item\n"
 	.string "{STR_VAR_2} in bulk, taking {STR_VAR_3}.\p"
 	.string "Interviewer: Oh, that's smart.\n"
 	.string "{STR_VAR_2}'s a very good item, too.$"
 
-gTVTodaysSmartShopperText07:: @ 08283F72
+SmartShopper_Text_ThirdItem::
 	.string "Clerk: And, the Trainer also bought\n"
 	.string "{STR_VAR_3} of the item {STR_VAR_2}.$"
 
-gTVTodaysSmartShopperText08:: @ 08283FA9
+SmartShopper_Text_DuringSale::
 	.string "Clerk: Plus, it was during a big sale.\n"
 	.string "That's smart shopping.$"
 
-gTVTodaysSmartShopperText09:: @ 08283FE7
+SmartShopper_Text_OutroNormal::
 	.string "Interviewer: Hmm… {STR_VAR_1} sounds like\n"
 	.string "quite the shrewd bargain hunter!\p"
 	.string "In total, {STR_VAR_1}'s purchases came to…\p"
@@ -1101,7 +1101,7 @@ gTVTodaysSmartShopperText09:: @ 08283FE7
 	.string "Oops! We're out of time!\n"
 	.string "See you on our next broadcast!$"
 
-gTVTodaysSmartShopperText10:: @ 0828409E
+SmartShopper_Text_IsVIP::
 	.string "Clerk: {STR_VAR_1} is a VIP customer,\n"
 	.string "no doubt about it.$"
 
@@ -1126,7 +1126,7 @@ SmartShopper_Text_ClerkMax::
 	.string "Clerk: {STR_VAR_1} is a VIP customer,\n"
 	.string "no doubt about it.$"
 
-gTVTodaysSmartShopperText12:: @ 082842E6
+SmartShopper_Text_OutroMax::
 	.string "Interviewer: Hmm…\n"
 	.string "That is amazing.\p"
 	.string "But why would the Trainer need to buy\n"
