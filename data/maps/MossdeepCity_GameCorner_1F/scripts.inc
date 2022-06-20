@@ -48,8 +48,8 @@ RS_MysteryEventsHouse_Text_OldManGreeting:
 RS_MysteryEventsHouse_Text_DoorIsLocked:
 	.string "The door appears to be locked.$"
 
-RS_MysteryEventsHouse_Text_ChallengeVisitingTrainer:
-	.string "A trainer named {STR_VAR_1} is\n"
+RS_MysteryEventsHouse_Text_ChallengeVisitingTrainer: @ 8224C1C
+	.string "A Trainer named {STR_VAR_1} is\n"
 	.string "visiting my home.\p"
 	.string "Would you like to challenge\n"
 	.string "{STR_VAR_1}?$"

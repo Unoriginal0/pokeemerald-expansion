@@ -78,10 +78,10 @@ PacifidlogTown_House3_Text_NotDesperateOrAnything:
 PacifidlogTown_House3_Text_ReallyWantedToGetBagon:
 	.string "I know I could go looking for one\n"
 	.string "on my own, but…\p"
-	.string "But I really wanted to get a BAGON\n"
-	.string "that another trainer caught…$"
+	.string "But I really wanted to get a Bagon\n"
+	.string "that another Trainer caught…$"
 
-PacifidlogTown_House3_Text_IsThatAPokedex:
+PacifidlogTown_House3_Text_IsThatAPokedex: @ 8203EF1
 	.string "Is that a Pokédex?\p"
 	.string "Did you get to meet a lot of different\n"
 	.string "Pokémon?\p"
