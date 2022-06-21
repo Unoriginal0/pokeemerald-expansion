@@ -52,6 +52,14 @@ OldaleTown_EventScript_MartEmployee::
 	case DIR_EAST, OldaleTown_EventScript_GoToMartEast
 	end
 
+OldaleTown_EventScript_Debugger::
+	lock
+	faceplayer
+	msgbox OldaleTown_Text_Debugger, MSGBOX_DEFAULT
+	giveitem ITEM_NAUGHTY_MINT
+	release
+	end
+
 OldaleTown_EventScript_GoToMartSouth::
 	applymovement LOCALID_MART_EMPLOYEE, OldaleTown_Movement_EmployeeSouth
 	applymovement OBJ_EVENT_ID_PLAYER, OldaleTown_Movement_PlayerSouth
@@ -342,6 +350,9 @@ OldaleTown_Movement_ReturnToOriginalPosition:
 	walk_down
 	walk_left
 	step_end
+
+OldaleTown_Text_Debugger:
+	.string "I give items. Here you go!$"
 
 OldaleTown_Text_SavingMyProgress:
 	.string "I want to take a rest, so I'm saving my\n"
