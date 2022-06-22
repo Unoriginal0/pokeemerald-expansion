@@ -9,6 +9,7 @@
 #include "sound.h"
 #include "constants/map_types.h"
 #include "constants/songs.h"
+#include "mgba_printf/mgba.h"
 
 // this file's functions
 static void MovePlayerOnMachBike(u8, u16, u16);
@@ -582,7 +583,9 @@ static void AcroBikeTransition_Moving(u8 direction)
         if (ObjectMovingOnRockStairs(playerObjEvent, direction))
             PlayerWalkFast(direction);
         else
-            PlayerRideWaterCurrent(direction);
+            //PlayerRideWaterCurrent(direction);
+            //Acro bike is faster
+            PlayerWalkFaster(direction);
     }
 }
 
@@ -1049,7 +1052,7 @@ s16 GetPlayerSpeed(void)
     if (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_MACH_BIKE)
         return machSpeeds[gPlayerAvatar.bikeFrameCounter];
     else if (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_ACRO_BIKE)
-        return PLAYER_SPEED_FASTER;
+        return PLAYER_SPEED_FASTEST;
     else if (gPlayerAvatar.flags & (PLAYER_AVATAR_FLAG_SURFING | PLAYER_AVATAR_FLAG_DASH))
         return PLAYER_SPEED_FAST;
     else

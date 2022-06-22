@@ -57,6 +57,7 @@ OldaleTown_EventScript_Debugger::
 	faceplayer
 	msgbox OldaleTown_Text_Debugger, MSGBOX_DEFAULT
 	giveitem ITEM_NAUGHTY_MINT
+	giveitem ITEM_BICYCLE
 	release
 	end
 

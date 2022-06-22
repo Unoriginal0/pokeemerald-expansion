@@ -22,6 +22,7 @@ Route110_SeasideCyclingRoadSouthEntrance_EventScript_BikeCheck::
 	lockall
 	specialvar VAR_RESULT, GetPlayerAvatarBike
 	call_if_eq VAR_RESULT, 2, Route110_SeasideCyclingRoadSouthEntrance_EventScript_OnMachBike
+	call_if_eq VAR_RESULT, 1, Route110_SeasideCyclingRoadSouthEntrance_EventScript_OnMachBike
 	goto_if_eq VAR_RESULT, 0, Route110_SeasideCyclingRoadSouthEntrance_EventScript_NoBike
 	setflag FLAG_SYS_CYCLING_ROAD
 	setvar VAR_TEMP_1, 1
