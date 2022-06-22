@@ -1006,17 +1006,17 @@ struct SaveBlock1
     /*0x31DC*/ struct Roamer roamer;
     /*0x31F8*/ struct EnigmaBerry enigmaBerry;
     /*0x322C*/ struct MysteryGiftSave mysteryGift;
-    /*0x3???*/ u8 dexSeen[NUM_DEX_FLAG_BYTES];
-    /*0x3???*/ u8 dexCaught[NUM_DEX_FLAG_BYTES];
-    /*0x3???*/ u32 trainerHillTimes[4];
-    /*0x3???*/ struct RamScript ramScript;
-    /*0x3???*/ struct RecordMixingGift recordMixingGift;
-    /*0x3???*/ LilycoveLady lilycoveLady;
-    /*0x3???*/ struct TrainerNameRecord trainerNameRecords[20];
-    /*0x3???*/ u8 registeredTexts[UNION_ROOM_KB_ROW_COUNT][21];
-    /*0x3???*/ struct SaveTrainerHill trainerHill;
-    /*0x3???*/ struct WaldaPhrase waldaPhrase;
-    // sizeof: 0x3???
+    /*0x3598*/ u8 dexSeen[NUM_DEX_FLAG_BYTES];
+    /*0x3609*/ u8 dexCaught[NUM_DEX_FLAG_BYTES];
+    /*0x367A*/ u32 trainerHillTimes[4];
+    /*0x368A*/ struct RamScript ramScript;
+    /*0x3A76*/ struct RecordMixingGift recordMixingGift;
+    /*0x3A86*/ LilycoveLady lilycoveLady;
+    /*0x3AC6*/ struct TrainerNameRecord trainerNameRecords[20];
+    /*0x3BB6*/ u8 registeredTexts[UNION_ROOM_KB_ROW_COUNT][21];
+    /*0x3C88*/ struct SaveTrainerHill trainerHill;
+    /*0x3C94*/ struct WaldaPhrase waldaPhrase;
+    // sizeof: 0x3CAC
 };
 
 extern struct SaveBlock1* gSaveBlock1Ptr;
