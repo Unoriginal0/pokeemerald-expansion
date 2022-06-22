@@ -3536,8 +3536,8 @@ static const u8 sDynamaxBandDesc[] = _(
 // Misc. Key Items
 static const u8 sBicycleDesc[] = _(
     "A folding bicycle\n"
-    "that combines Mach\n"
-    "and Acro bikes.");
+    "that combines the\n"
+    "Mach and Acro bikes.");
 
 static const u8 sMachBikeDesc[] = _(
     "A folding bicycle\n"

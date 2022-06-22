@@ -1869,6 +1869,7 @@ static bool8 Fishing_ShowDots(struct Task *task)
 
     AlignFishingAnimationFrames();
     task->tFrameCounter++;
+    /* 
     if (JOY_NEW(A_BUTTON))
     {
         task->tStep = FISHING_NO_BITE;
@@ -1876,7 +1877,7 @@ static bool8 Fishing_ShowDots(struct Task *task)
             task->tStep = FISHING_GOT_AWAY;
         return TRUE;
     }
-    else
+    else*/
     {
         if (task->tFrameCounter >= 20)
         {
@@ -1938,10 +1939,10 @@ static bool8 Fishing_CheckForBite(struct Task *task)
 
 static bool8 Fishing_GotBite(struct Task *task)
 {
-    AlignFishingAnimationFrames();
-    AddTextPrinterParameterized(0, FONT_NORMAL, gText_OhABite, 0, 17, 0, NULL);
-    task->tStep++;
-    task->tFrameCounter = 0;
+    //AlignFishingAnimationFrames();
+    //AddTextPrinterParameterized(0, FONT_NORMAL, gText_OhABite, 0, 17, 0, NULL);
+    task->tStep += 3; // Instantly go to the final step
+    //task->tFrameCounter = 0;
     return FALSE;
 }
 
