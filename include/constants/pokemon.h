@@ -437,4 +437,8 @@
 
 #define LEGENDARY_PERFECT_IV_COUNT 3
 
+// Day and night
+#define DAY_START 6
+#define NIGHT_START 18
+
 #endif // GUARD_CONSTANTS_POKEMON_H
