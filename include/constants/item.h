@@ -20,10 +20,10 @@
 #define BATTLEITEMS_POCKET  3
 #define BERRIES_POCKET      4
 #define TREASURES_POCKET    5
-#define MEGASTONES_POCKET   6
-#define ZCRYSTALS_POCKET    7
-#define TMHM_POCKET         8
-#define KEYITEMS_POCKET     9
-#define POCKETS_COUNT       10
+//#define MEGASTONES_POCKET   6
+//#define ZCRYSTALS_POCKET    7
+#define TMHM_POCKET         6
+#define KEYITEMS_POCKET     7
+#define POCKETS_COUNT       8
 
 #endif // GUARD_ITEM_CONSTANTS_H
