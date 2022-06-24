@@ -56,9 +56,8 @@ OldaleTown_EventScript_Debugger::
 	lock
 	faceplayer
 	msgbox OldaleTown_Text_Debugger, MSGBOX_DEFAULT
-	giveitem ITEM_OLD_ROD
 	giveitem ITEM_BICYCLE
-	giveitem ITEM_REPEL, 5
+	giveitem ITEM_RARE_CANDY, 5
 	release
 	end
 
