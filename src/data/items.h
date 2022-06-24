@@ -17,7 +17,7 @@ const struct Item gItems[] =
     {
         .name = _("Poké Ball"),
         .itemId = ITEM_POKE_BALL,
-        .price = 200,
+        .price = 100,
         .description = sPokeBallDesc,
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_POKE_BALL - FIRST_BALL,
@@ -30,7 +30,7 @@ const struct Item gItems[] =
     {
         .name = _("Great Ball"),
         .itemId = ITEM_GREAT_BALL,
-        .price = 600,
+        .price = 300,
         .description = sGreatBallDesc,
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_GREAT_BALL - FIRST_BALL,
@@ -43,7 +43,7 @@ const struct Item gItems[] =
     {
         .name = _("Ultra Ball"),
         .itemId = ITEM_ULTRA_BALL,
-        .price = 800,
+        .price = 400,
         .description = sUltraBallDesc,
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_ULTRA_BALL - FIRST_BALL,
@@ -95,7 +95,7 @@ const struct Item gItems[] =
     {
         .name = _("Net Ball"),
         .itemId = ITEM_NET_BALL,
-        .price = 1000,
+        .price = 500,
         .description = sNetBallDesc,
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_NET_BALL - FIRST_BALL,
@@ -108,7 +108,7 @@ const struct Item gItems[] =
     {
         .name = _("Nest Ball"),
         .itemId = ITEM_NEST_BALL,
-        .price = 1000,
+        .price = 500,
         .description = sNestBallDesc,
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_NEST_BALL - FIRST_BALL,
@@ -121,7 +121,7 @@ const struct Item gItems[] =
     {
         .name = _("Dive Ball"),
         .itemId = ITEM_DIVE_BALL,
-        .price = 1000,
+        .price = 500,
         .description = sDiveBallDesc,
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_DIVE_BALL - FIRST_BALL,
@@ -134,7 +134,7 @@ const struct Item gItems[] =
     {
         .name = _("Dusk Ball"),
         .itemId = ITEM_DUSK_BALL,
-        .price = 1000,
+        .price = 500,
         .description = sDuskBallDesc,
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_DUSK_BALL - FIRST_BALL,
@@ -147,7 +147,7 @@ const struct Item gItems[] =
     {
         .name = _("Timer Ball"),
         .itemId = ITEM_TIMER_BALL,
-        .price = 1000,
+        .price = 500,
         .description = sTimerBallDesc,
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_TIMER_BALL - FIRST_BALL,
@@ -160,7 +160,7 @@ const struct Item gItems[] =
     {
         .name = _("Quick Ball"),
         .itemId = ITEM_QUICK_BALL,
-        .price = 1000,
+        .price = 500,
         .description = sQuickBallDesc,
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_QUICK_BALL - FIRST_BALL,
@@ -173,7 +173,7 @@ const struct Item gItems[] =
     {
         .name = _("Repeat Ball"),
         .itemId = ITEM_REPEAT_BALL,
-        .price = 1000,
+        .price = 500,
         .description = sRepeatBallDesc,
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_REPEAT_BALL - FIRST_BALL,
@@ -186,7 +186,7 @@ const struct Item gItems[] =
     {
         .name = _("Luxury Ball"),
         .itemId = ITEM_LUXURY_BALL,
-        .price = 1000,
+        .price = 500,
         .description = sLuxuryBallDesc,
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_LUXURY_BALL - FIRST_BALL,
@@ -400,8 +400,8 @@ const struct Item gItems[] =
     {
         .name = _("Hyper Potion"),
         .itemId = ITEM_HYPER_POTION,
-        .price = 1500,
-        .holdEffectParam = 120,
+        .price = 1200,
+        .holdEffectParam = 200,
         .description = sHyperPotionDesc,
         .pocket = POCKET_MEDICINE,
         .type = ITEM_USE_PARTY_MENU,
@@ -1516,7 +1516,7 @@ const struct Item gItems[] =
     {
         .name = _("Repel"),
         .itemId = ITEM_REPEL,
-        .price = 400,
+        .price = 350,
         .holdEffectParam = 100,
         .description = sRepelDesc,
         .pocket = POCKET_ITEMS,
@@ -1529,7 +1529,7 @@ const struct Item gItems[] =
     {
         .name = _("Super Repel"),
         .itemId = ITEM_SUPER_REPEL,
-        .price = 700,
+        .price = 500,
         .holdEffectParam = 200,
         .description = sSuperRepelDesc,
         .pocket = POCKET_ITEMS,
@@ -1542,7 +1542,7 @@ const struct Item gItems[] =
     {
         .name = _("Max Repel"),
         .itemId = ITEM_MAX_REPEL,
-        .price = 900,
+        .price = 600,
         .holdEffectParam = 250,
         .description = sMaxRepelDesc,
         .pocket = POCKET_ITEMS,
@@ -1603,7 +1603,7 @@ const struct Item gItems[] =
             .importance = 1,
             .pocket = POCKET_KEY_ITEMS,
         #else
-            .price = 1000,
+            .price = 550,
             .pocket = POCKET_ITEMS,
         #endif
         .type = ITEM_USE_FIELD,
