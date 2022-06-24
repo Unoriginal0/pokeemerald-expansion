@@ -968,7 +968,7 @@ LittlerootTown_Text_DadsOldItem:
 	.string "adventure, take this!$"
 
 LittlerootTown_Text_ExplainExpShare:
-	.string "MOM: {PLAYER}, it used to belong to \n"
+	.string "Mom: {PLAYER}, it used to belong to \n"
 	.string "your Dad. He never uses it anymore.\p"
 	.string "They are used to train your Pokémon\n"
 	.string "faster! A portion of the experience\l"

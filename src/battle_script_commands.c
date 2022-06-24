@@ -1188,17 +1188,17 @@ static const u16 sPickupItems[] =
     ITEM_GREAT_BALL,
     ITEM_REPEL,
     ITEM_ESCAPE_ROPE,
-    ITEM_X_ATTACK,
-    ITEM_FULL_HEAL,
-    ITEM_ULTRA_BALL,
+    ITEM_FULL_HEAL,    
     ITEM_HYPER_POTION,
-    ITEM_RARE_CANDY,
-    ITEM_PROTEIN,
+    ITEM_ULTRA_BALL,
     ITEM_REVIVE,
-    ITEM_HP_UP,
+    ITEM_RARE_CANDY,
+    ITEM_NUGGET,
+    ITEM_PP_UP,
+    ITEM_HEART_SCALE,
     ITEM_FULL_RESTORE,
     ITEM_MAX_REVIVE,
-    ITEM_PP_UP,
+    ITEM_PP_MAX,
     ITEM_MAX_ELIXIR,
 };
 
@@ -1209,12 +1209,12 @@ static const u16 sRarePickupItems[] =
     ITEM_KINGS_ROCK,
     ITEM_FULL_RESTORE,
     ITEM_ETHER,
-    ITEM_WHITE_HERB,
-    ITEM_TM44_REST,
+    ITEM_MAX_REVIVE,
+    ITEM_DESTINY_KNOT,
     ITEM_ELIXIR,
-    ITEM_TM01_FOCUS_PUNCH,
+    ITEM_DESTINY_KNOT,
     ITEM_LEFTOVERS,
-    ITEM_TM26_EARTHQUAKE,
+    ITEM_DESTINY_KNOT,
 };
 
 static const u8 sPickupProbabilities[] =
@@ -6866,7 +6866,7 @@ static u32 GetTrainerMoneyToGive(u16 trainerId)
     // CUSTOM: Give more money if playing on set mode.
     if (gSaveBlock2Ptr->optionsBattleStyle == OPTIONS_BATTLE_STYLE_SET)
     {
-        moneyReward = moneyReward * 150 / 100;
+        moneyReward = moneyReward * 200 / 100;
     }
 
     return moneyReward;
