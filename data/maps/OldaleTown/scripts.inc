@@ -57,7 +57,7 @@ OldaleTown_EventScript_Debugger::
 	faceplayer
 	msgbox OldaleTown_Text_Debugger, MSGBOX_DEFAULT
 	giveitem ITEM_BICYCLE
-	giveitem ITEM_RARE_CANDY, 5
+	giveitem ITEM_TM10
 	release
 	end
 
