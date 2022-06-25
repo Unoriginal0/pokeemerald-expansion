@@ -3987,7 +3987,8 @@ static void Cmd_getexp(void)
         #endif
 
         // Trainer bonus if less than Gen 7 or if Exp Share is on
-        if (gBattleTypeFlags & BATTLE_TYPE_TRAINER && (B_TRAINER_EXP_MULTIPLIER < GEN_7 || (B_TRAINER_EXP_MULTIPLIER >= GEN_7 && !FlagGet(FLAG_SYS_EXP_SHARE))))
+        if (gBattleTypeFlags & BATTLE_TYPE_TRAINER && (B_TRAINER_EXP_MULTIPLIER < GEN_7 
+        || (B_TRAINER_EXP_MULTIPLIER >= GEN_7 && FlagGet(FLAG_DEFEATED_RIVAL_ROUTE103) && !FlagGet(FLAG_SYS_EXP_SHARE))))
             calculatedExp = (calculatedExp * 150) / 100;
         
         // Trade bonus
@@ -6863,11 +6864,14 @@ static u32 GetTrainerMoneyToGive(u16 trainerId)
             moneyReward = 4 * lastMonLevel * gBattleStruct->moneyMultiplier * gTrainerMoneyTable[i].value;
     }
 
-    // CUSTOM: Give more money if playing on set mode.
-    if (gSaveBlock2Ptr->optionsBattleStyle == OPTIONS_BATTLE_STYLE_SET)
+    // CUSTOM: Give more money if playing on set mode and without items.
+    if (gSaveBlock2Ptr->optionsBattleStyle == OPTIONS_BATTLE_STYLE_SET && FlagGet(FLAG_DEFEATED_RIVAL_ROUTE103))
     {
-        moneyReward = moneyReward * 200 / 100;
+        moneyReward = moneyReward * 150 / 100;
     }
+
+    if (gSaveBlock2Ptr->optionsFlagItemUse)
+        moneyReward = moneyReward * 200 / 100;
 
     return moneyReward;
 }

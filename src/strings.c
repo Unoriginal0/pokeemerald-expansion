@@ -309,6 +309,7 @@ const u8 gText_NumberItem_HM[] = _("{CLEAR_TO 0x11}{STR_VAR_1}{CLEAR 0x05}{STR_V
 const u8 gText_SizeSlash[] = _("Size /");
 const u8 gText_FirmSlash[] = _("Firm /");
 const u8 gText_Var1DotVar2[] = _("{STR_VAR_1}.{STR_VAR_2}”");
+const u8 gText_Var1DotVar2_Metric[] = _("{STR_VAR_1}.{STR_VAR_2}cm");
 
 // Berry firmness strings
 const u8 gBerryFirmnessString_VerySoft[] = _("Very soft");
@@ -1510,24 +1511,34 @@ const u8 gText_Option[] = _("Option");
 const u8 gText_TextSpeed[] = _("Text Speed");
 const u8 gText_BattleScene[] = _("Battle Scene");
 const u8 gText_BattleStyle[] = _("Battle Style");
+const u8 gText_BattleItemsM[] = _("Battle Items");
 const u8 gText_Sound[] = _("Sound");
 const u8 gText_Frame[] = _("Frame");
 const u8 gText_OptionMenuCancel[] = _("Cancel");
+const u8 gText_OptionMenuSave[] = _("Save");
+const u8 gText_Font[] = _("Font");  //tx_optionsPlus
+const u8 gText_OptionMatchCalls[] = _("Overworld Calls");    //tx_optionsPlus
 const u8 gText_ButtonMode[] = _("Button Mode");
-const u8 gText_TextSpeedSlow[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}Slow");
-const u8 gText_TextSpeedMid[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}Mid");
-const u8 gText_TextSpeedFast[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}Fast");
-const u8 gText_BattleSceneOn[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}On");
-const u8 gText_BattleSceneOff[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}Off");
-const u8 gText_BattleStyleShift[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}Shift");
-const u8 gText_BattleStyleSet[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}Set");
-const u8 gText_SoundMono[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}Mono");
-const u8 gText_SoundStereo[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}Stereo");
-const u8 gText_FrameType[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}Type");
-const u8 gText_FrameTypeNumber[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}");
-const u8 gText_ButtonTypeNormal[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}Normal");
-const u8 gText_ButtonTypeLR[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}LR");
-const u8 gText_ButtonTypeLEqualsA[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}L=A");
+const u8 gText_TextSpeedSlow[] = _("Slow");
+const u8 gText_TextSpeedMid[] = _("Mid");
+const u8 gText_TextSpeedFast[] = _("Fast");
+const u8 gText_BattleSceneOn[] = _("On");
+const u8 gText_BattleSceneOff[] = _("Off");
+const u8 gText_BattleStyleShift[] = _("Shift");
+const u8 gText_BattleStyleSet[] = _("Set");
+const u8 gText_BattleItemsEnabled[] = _("Enabled");
+const u8 gText_BattleItemsDisabled[] = _("Disabled");
+const u8 gText_UnitSystemMetric[] = _("Metric");       //tx_optionsPlus
+const u8 gText_UnitSystemImperial[] = _("Imperial");   //tx_optionsPlus
+const u8 gText_OptionFontEmerald[] = _("Emerald");    //tx_optionsPlus
+const u8 gText_OptionFontFireRed[] = _("FRLG");        //tx_optionsPlus
+const u8 gText_SoundMono[] = _("Mono");
+const u8 gText_SoundStereo[] = _("Stereo");
+const u8 gText_FrameType[] = _("Type");
+const u8 gText_FrameTypeNumber[] = _("");
+const u8 gText_ButtonTypeNormal[] = _("Normal");
+const u8 gText_ButtonTypeLR[] = _("LR");
+const u8 gText_ButtonTypeLEqualsA[] = _("L=A");
 const u8 gText_NumPlayerLink[] = _("{STR_VAR_1}P Link");
 const u8 gText_BronzeCard[] = _("Bronze");
 const u8 gText_CopperCard[] = _("Copper");
@@ -1855,5 +1866,5 @@ const u8 gText_Berry[] = _("Berry");
 const u8 gText_Berries[] = _("Berries");
 
 // Exp Share
-const u8 gText_ExpShareOn[] = _("Turned on the Exp. Share.\pParty will now gain a portion\nof the Experience Points.{PAUSE_UNTIL_PRESS}");
-const u8 gText_ExpShareOff[] = _("Turned off the Exp. Share.\pParty will no longer gain a portion\nof any Experience Points.{PAUSE_UNTIL_PRESS}");
+const u8 gText_ExpShareOn[] = _("Turned on the Exp. Share.\pParty will now gain a portion\nof the Experience Points.\pTrainers give less Experience Points.{PAUSE_UNTIL_PRESS}");
+const u8 gText_ExpShareOff[] = _("Turned off the Exp. Share.\pParty will no longer gain a portion\nof any Experience Points.\pTrainers give more Experience Points.{PAUSE_UNTIL_PRESS}");
