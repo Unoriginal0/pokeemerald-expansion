@@ -590,6 +590,15 @@ static void Cmd_trygetbaddreamstarget(void);
 static void Cmd_tryworryseed(void);
 static void Cmd_metalburstdamagecalculator(void);
 
+const u16 sLevelCapFlags[NUM_SOFT_CAPS] =
+{
+    FLAG_BADGE01_GET, FLAG_BADGE02_GET, FLAG_BADGE03_GET, FLAG_BADGE04_GET,
+    FLAG_BADGE05_GET, FLAG_BADGE06_GET, FLAG_BADGE07_GET, FLAG_BADGE08_GET,
+};
+
+const u16 sLevelCaps[NUM_SOFT_CAPS] = {20, 30, 40, 50, 60, 70, 80, 100 };
+const u8 sLevelCapReduction[7] = { 2, 3, 4, 5, 7, 10, 20 };
+
 void (* const gBattleScriptingCommandsTable[])(void) =
 {
     Cmd_attackcanceler,                          //0x0
@@ -3880,6 +3889,28 @@ static void Cmd_jumpbasedontype(void)
     }
 }
 
+static u8 GetPkmnExpDivisor(u8 level)
+{
+    u8 i;
+    u8 lvlCapDivisor = 1;
+    u8 levelDiff;
+
+    // Divide the exp according to the soft cap divisor
+    for (i = 0; i < NUM_SOFT_CAPS; i++)
+    {
+        if (!FlagGet(sLevelCapFlags[i]) && level >= sLevelCaps[i])
+        {
+            levelDiff = level - sLevelCaps[i];
+            if (levelDiff > 6)
+                levelDiff = 6;
+            lvlCapDivisor = sLevelCapReduction[levelDiff];
+            break;
+        }
+    }
+
+    return lvlCapDivisor;
+}
+
 static void Cmd_getexp(void)
 {
     u16 item;
@@ -4021,6 +4052,8 @@ static void Cmd_getexp(void)
         if(*expGiveType == GiveExpShared)
             calculatedExp = (calculatedExp * 1) / 2; // Fine tune this for more even spread, default 50%
         
+        calculatedExp = calculatedExp / GetPkmnExpDivisor(gPlayerParty[gBattleStruct->expGetterMonId].level);
+
         // Never let exp be 0
         if(calculatedExp == 0)
             calculatedExp == 1;
@@ -14243,6 +14276,7 @@ static void Cmd_trainerslideout(void)
 
     gBattlescriptCurrInstr += 2;
 }
+
 
 static const u16 sTelekinesisBanList[] =
 {

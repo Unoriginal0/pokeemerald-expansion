@@ -1221,7 +1221,7 @@ const u8 gText_PsychUp48BP[] = _("Psych Up{CLEAR_TO 0x4E}48BP");
 const u8 gText_IcePunch48BP[] = _("Ice Punch{CLEAR_TO 0x4E}48BP");
 const u8 gText_ThunderPunch48BP[] = _("ThunderPunch{CLEAR_TO 0x4E}48BP");
 const u8 gText_FirePunch48BP[] = _("Fire Punch{CLEAR_TO 0x4E}48BP");
-const u8 gText_PkmnFainted3[] = _("{STR_VAR_1} fainted…\p\n");
+const u8 gText_PkmnFainted3[] = _("{STR_VAR_1} survived the poisoning.\nThe poison faded away!\p");
 const u8 gText_Marco[] = _("Marco");
 const u8 gText_TrainerCardName[] = _("Name: ");
 const u8 gText_TrainerCardIDNo[] = _("IDNo.");
@@ -1868,3 +1868,9 @@ const u8 gText_Berries[] = _("Berries");
 // Exp Share
 const u8 gText_ExpShareOn[] = _("Turned on the Exp. Share.\pParty will now gain a portion\nof the Experience Points.\pTrainers give less Experience Points.{PAUSE_UNTIL_PRESS}");
 const u8 gText_ExpShareOff[] = _("Turned off the Exp. Share.\pParty will no longer gain a portion\nof any Experience Points.\pTrainers give more Experience Points.{PAUSE_UNTIL_PRESS}");
+
+// Move item
+const u8 gMenuText_Move[] = _("Move");
+const u8 gText_MoveItemWhere[] = _("Move item to where?");
+const u8 gText_XsYAnd[] = _("{STR_VAR_1}'s\n{STR_VAR_2} and\l");
+const u8 gText_XsYWereSwapped[] = _("{STR_VAR_1}'s\l{STR_VAR_2} were swapped!{PAUSE_UNTIL_PRESS}");

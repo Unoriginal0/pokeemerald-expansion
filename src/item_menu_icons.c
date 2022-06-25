@@ -130,10 +130,10 @@ static const union AnimCmd *const sBagSpriteAnimTable[] =
     sSpriteAnim_Bag_BattleItems,
     sSpriteAnim_Bag_Berries,
     sSpriteAnim_Bag_Treasures,
-    sSpriteAnim_Bag_MegaStones,
-    sSpriteAnim_Bag_ZCrystals,
     sSpriteAnim_Bag_TMsHMs,
-    sSpriteAnim_Bag_KeyItems
+    sSpriteAnim_Bag_KeyItems,
+    sSpriteAnim_Bag_MegaStones,
+    sSpriteAnim_Bag_ZCrystals
 };
 
 static const union AffineAnimCmd sSpriteAffineAnim_BagNormal[] =
