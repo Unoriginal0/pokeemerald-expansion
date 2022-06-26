@@ -57,7 +57,17 @@ OldaleTown_EventScript_Debugger::
 	faceplayer
 	msgbox OldaleTown_Text_Debugger, MSGBOX_DEFAULT
 	giveitem ITEM_BICYCLE
-	giveitem ITEM_TM10
+	giveitem ITEM_TM49
+	giveitem ITEM_HM01
+	giveitem ITEM_HM02
+	giveitem ITEM_HM03
+	giveitem ITEM_HM04
+	giveitem ITEM_HM05
+	giveitem ITEM_HM06
+	giveitem ITEM_HM07
+	giveitem ITEM_HM08
+	setflag FLAG_BADGE02_GET
+	setflag FLAG_BADGE06_GET
 	release
 	end
 
